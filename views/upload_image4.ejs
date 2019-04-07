@@ -1,0 +1,173 @@
+<%include header%>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>update</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
+
+      .sidenav {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        display: block;
+      }
+
+      .main {
+        margin-left: 160px; /* Same as the width of the sidenav */
+        font-size: 28px; /* Increased text to enable scrolling */
+        padding: 0px 10px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      .sidenav1 {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+
+      .sidenav1 a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        display: block;
+      }
+
+      .main {
+        margin-left: 160px; /* Same as the width of the sidenav */
+        font-size: 28px; /* Increased text to enable scrolling */
+        padding: 0px 10px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav1 {
+          padding-top: 15px;
+        }
+        .sidenav1 a {
+          font-size: 18px;
+        }
+      }
+      a{
+
+      margin-top: 10px
+      }
+
+      hr{
+
+        background-color:white;
+        width: 60%;
+        margin-bottom: 30px
+        }
+      .btn{
+
+          color:#dfe4ea;
+      }
+    </style>
+  </head>
+  <body>
+       <!-- left nav bar -->
+<div class="sidenav" style="font-family:'Anton', sans-serif;text-align:center">
+    <h2 style="color:#ff4757">ADMIN PANEL</h2>
+    <hr >
+    <a href="http://localhost:3000/dashboard" class="btn btn-default">Dashboard</a>
+    
+    <a href="http://localhost:3000/project" class="btn btn-default">Projects</a>
+    
+    <a href="http://localhost:3000/events" class="btn btn-default">Events</a>
+    
+    <a href="http://localhost:3000/sponsers" class="btn btn-default">Sponsors</a>
+  </div>
+
+<!-- right nav bar -->
+<div class="sidenav1" style="font-family:'Anton', sans-serif;">
+<a href="http://localhost:3000/add_new_project" class="btn btn-default">add new project</a>
+<button class="btn btn-danger" ><a href="http://localhost:3000/logout" style="color:white">logout</a></button> 
+
+</div>
+    <br /><br />
+
+    <div class="container">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class=" col-8">
+          <h2>Upload project image</h2>
+          <% upload_image.forEach((update_project)=>{ %>
+
+          <form action="http://localhost:3000/upload_image4" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="project_name">project_name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="project_name"
+                name="project_name"
+                value="<%=update_project.project_name%>"
+                required
+              /> <br>
+              <input
+                type="file"
+                class="form-control"
+                id="pimg3"
+                name="pimg3"
+              />
+
+             
+            </div>
+
+
+            <button class="btn btn-warning">Upload</button>
+          </form>
+          <% }); %>
+          <div style="margin-bottom:500px"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<%include footer%>

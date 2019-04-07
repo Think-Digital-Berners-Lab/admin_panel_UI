@@ -1,0 +1,40 @@
+a{
+
+    color: white
+}
+
+h1{
+
+    text-align: center;
+    margin-top: 10px
+}
+
+form{
+
+    margin-top:20% 
+}
+
+input{
+     
+    margin-left:20%; 
+    margin-bottom: 10px;
+    text-align: center
+}
+
+button{
+
+    width: 40%;
+    margin-top: 5px;
+    margin-left: 30%;
+    margin-bottom: 10px    
+}
+
+.envelope{
+
+    position: absolute;
+    top: 22%;
+    left: 40%;
+    width: 20%;
+    height: 50%;
+    border: 2px solid black
+}
